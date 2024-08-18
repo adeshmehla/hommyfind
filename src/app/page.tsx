@@ -52,14 +52,14 @@ export default function Home() {
       <main className="flex min-h-screen flex-col"
       >
         <div>
-          {/* <Image
+          <Image
             className="brightness-75"
             src={home_thumbnail1}
             fill
             style={{ objectFit: 'cover' }}
             alt="Background image"
             priority
-          /> */}
+          />
         </div>
         <Navbar />
         <div className="relative flex flex-col items-center top-[19vh] text-center">
