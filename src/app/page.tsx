@@ -1,113 +1,114 @@
 import Image from "next/image";
-
+import { HouseProvider } from "../context/context";
+import Navbar from "@/components/Navbar";
+import home_thumbnail1 from "@/images/home_thumbnail1.jpg";
+import house from "@/images/house.jpg";
+import house2 from "@/images/house2.jpg";
+import house3 from "@/images/house3.jpg";
+import house4 from "@/images/house4.jpg";
+import house10 from "@/images/house10.jpg";
+import SearchBar from '../components/Seachbar'
+import PropertyCard from '../components/propertyCard'
+import PropertyTypeSection from "@/components/propertyTypeSection";
+import GetInTouch from "@/components/Forms/GetInTouch";
+import Footer from "@/components/footer";
 export default function Home() {
+  const properties = [
+    {
+      id: 1,
+      imageUrl: house,
+      title: 'Modern Apartment in the City Center',
+      description: '2 beds • 2 baths • 1,200 sqft',
+    },
+    {
+      id: 2,
+      imageUrl: house2,
+      title: 'Cozy Cottage in the Countryside',
+      description: '3 beds • 2 baths • 1,800 sqft',
+    },
+    {
+      id: 3,
+      imageUrl: house3,
+      title: 'Luxury Villa with Private Pool',
+      description: '4 beds • 3 baths • 2,500 sqft',
+    },
+    {
+      id: 4,
+      imageUrl: house4,
+      title: 'Charming House with Garden',
+      description: '3 beds • 2 baths • 1,500 sqft',
+    },
+    {
+      id: 4,
+      imageUrl: house10,
+      title: 'Clean and good PG Room',
+      description: '2 beds • 1 baths • 700 sqft',
+    }
+  ];
+
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
+    <HouseProvider>
+      <main className="flex min-h-screen flex-col"
+      >
+        <div>
+          {/* <Image
+            className="brightness-75"
+            src={home_thumbnail1}
+            fill
+            style={{ objectFit: 'cover' }}
+            alt="Background image"
+            priority
+          /> */}
+        </div>
+        <Navbar />
+        <div className="relative flex flex-col items-center top-[19vh] text-center">
+          <br />
+          <h1 className="text-white text-5xl font-bold">Find Your Dream Living Space Here</h1>
+          <p className="text-white text-xl">Unlock Your Dream Home: Where Every Key Opens a New Chapter</p>
+          <div>
+            <SearchBar onToggleDropdown={undefined} onCityChange={undefined} onChange={undefined} disableRedirect={undefined} searchWidth={"650px"} />
+          </div>
+        </div>
+      </main>
+      <div className="font-Quicksand p-10 m-20 text-[##333333]">
+        Lorem ipsum dolor sit amet . The graphic and typographic operators know this well, in reality all the professions dealing with the universe of communication have a stable relationship with these words, but what is it? Lorem ipsum is a dummy text without any sense.
+        It is a sequence of Latin words that, as they are positioned, do not form sentences with a complete sense, but give life to a test text useful to fill spaces that will subsequently be occupied from ad hoc texts composed by communication professionals.
+        It is certainly the most famous placeholder text even if there are different versions distinguishable from the order in which the Latin words are repeated.
+      </div>
+      <div className="font-Quicksand p-10 m-20 text-[#333333] text-center">
+        <h2 className="text-3xl font-bold">Why Choose Us</h2>
+        <hr className="w-48 border-t-4 border-[#FF5C00] my-4 mx-auto" />
+
+        <p className="text-gray-700">
+          Our property listing platform offers a seamless and intuitive experience, designed with cutting-edge Next.js technology for blazing-fast performance. Whether you're browsing through listings or searching for your dream home, our site ensures a smooth and responsive user experience every step of the way.
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+
+        <p className="text-gray-700 mt-4">
+          Built with Tailwind CSS, our website is not only aesthetically pleasing but also highly customizable, ensuring that your journey in finding the perfect property is as enjoyable as it is efficient. Trust us to provide the best platform for all your property needs.
+        </p>
+      </div>
+      <div className="font-Quicksand p-10 m-20 text-[#333333] text-center">
+        <h2 className="text-3xl font-bold">VIEW OUR COMMUNITIES</h2>
+        <hr className="w-48 border-t-4 border-[#FF5C00] my-4 mx-auto" />
+        <div className="text-gray-700">
+          <SearchBar onToggleDropdown={undefined} onCityChange={undefined} onChange={undefined} disableRedirect={undefined} searchWidth={"650px"} />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-10">
+          {properties.map((property) => (
+            <PropertyCard key={property.id} property={property} />
+          ))}
+        </div>
+        <div>
+          <PropertyTypeSection />
+        </div>
+        <div>
+          <GetInTouch />
         </div>
       </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+        <div>
+          <Footer/>
+        </div>
+    </HouseProvider>
   );
 }
