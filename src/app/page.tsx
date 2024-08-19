@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { HouseProvider } from "../context/context";
+import { HouseProvider } from "@/context/context";
 import Navbar from "@/components/Navbar";
 import home_thumbnail1 from "@/images/home_thumbnail1.jpg";
 import house from "@/images/house.jpg";
@@ -56,13 +56,13 @@ export default function Home() {
             className="brightness-75"
             src={home_thumbnail1}
             fill
-            style={{ objectFit: 'cover' }}
+            style={{ objectFit: 'cover',zIndex:"-1" }}
             alt="Background image"
             priority
           />
         </div>
         <Navbar />
-        <div className="relative flex flex-col items-center top-[19vh] text-center">
+        <div className="z-[-1] relative flex flex-col items-center top-[19vh] text-center">
           <br />
           <h1 className="text-white text-5xl font-bold">Find Your Dream Living Space Here</h1>
           <p className="text-white text-xl">Unlock Your Dream Home: Where Every Key Opens a New Chapter</p>

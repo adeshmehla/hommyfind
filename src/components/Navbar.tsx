@@ -3,11 +3,11 @@ import React, { useState, useEffect, useContext } from "react";
 import Link from "next/link";
 import Topnav from "./Topnav";
 import { AddEditPropertyModel } from './Forms/AddNewProperty';
-import { houseContext } from "@/context/context";
+import { HouseContext } from "@/context/context";
 
 const Navbar = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const { activeSection, setActiveSection }: any = useContext(houseContext);
+    const { activeSection, setActiveSection }: any = useContext(HouseContext);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isAddPropertyFormOpen, setIsAddPropertyAddPropertyFormOpen] = useState(false);
 
@@ -127,13 +127,15 @@ const Navbar = () => {
                     </div>
                 </nav>
             </div>
+            <div className="flex justify-center">
             {isAddPropertyFormOpen && (
                 <AddEditPropertyModel
-                    isOpen={isAddPropertyFormOpen}
-                    onClose={handleCloseForm}
-                    onSubmit={handleAddEditFormSubmit}
+                isOpen={isAddPropertyFormOpen}
+                onClose={handleCloseForm}
+                onSubmit={handleAddEditFormSubmit}
                 />
             )}
+            </div>
         </>
     );
 };

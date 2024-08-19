@@ -1,17 +1,17 @@
 "use client";
-import { houseContext } from "@/context/context";
+import { HouseContext } from "@/context/context";
 import { Search } from "lucide-react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useContext, useEffect, useRef, useState } from "react";
-import CityDropdown from "./CityDropdown";
+import CityDropdown from "@/components/CityDropdown";
 // import CityDropdown from "./CityDropdown";
 
 const SearchBar = ({ onToggleDropdown, onCityChange, onChange, disableRedirect,searchWidth }) => {
   const { searchText, setSearchText, setLocationCity, setLocationRegion, locationCity, locationRegion } =
-    useContext(houseContext);
+    useContext(HouseContext);
   const router = useRouter();
-  const SearchParams = useSearchParams();
-  const city = SearchParams.get("city");
+  // const SearchParams = useSearchParams();
+  // const city = SearchParams.get("city");
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const [cities, setCities] = useState([
     { name: "New York", country: "USA" },

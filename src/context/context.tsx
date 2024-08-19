@@ -20,7 +20,7 @@ interface HouseContextType {
 }
 
 // Create the context with a default value of undefined
-export const houseContext = createContext<HouseContextType | undefined>(undefined);
+export const HouseContext = createContext<HouseContextType | undefined>(undefined);
 
 export const HouseProvider = ({ children }: { children: ReactNode }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -61,7 +61,7 @@ export const HouseProvider = ({ children }: { children: ReactNode }) => {
 
 
   return (
-    <houseContext.Provider
+    <HouseContext.Provider
       value={{
         searchText,
         setSearchText,
@@ -80,6 +80,6 @@ export const HouseProvider = ({ children }: { children: ReactNode }) => {
       }}
     >
       {children}
-    </houseContext.Provider>
+    </HouseContext.Provider>
   );
 };
