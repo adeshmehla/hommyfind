@@ -56,7 +56,7 @@ export default function Home() {
             className="brightness-75"
             src={home_thumbnail1}
             fill
-            style={{ objectFit: 'cover',zIndex:"-1" }}
+            style={{ objectFit: 'cover', zIndex: "-1" }}
             alt="Background image"
             priority
           />
@@ -64,30 +64,44 @@ export default function Home() {
         <Navbar />
         <div className="z-[-1] relative flex flex-col items-center top-[19vh] text-center">
           <br />
-          <h1 className="text-white text-5xl font-bold">Find Your Dream Living Space Here</h1>
-          <p className="text-white text-xl">Unlock Your Dream Home: Where Every Key Opens a New Chapter</p>
+          <h1 className="text-white text-5xl font-bold">Let Us Find the Place of Your Dreams          </h1>
+          <p className="text-white text-xl">At Hommyfind, we make it easy to find your perfect PG or rental room in Chandigarh, Mohali, or Panchkula. Just tell us what you’re looking for, and we’ll match you with options that fit your needs. Your dream home is just a few clicks away!
+          </p>
           <div>
             <SearchBar onToggleDropdown={undefined} onCityChange={undefined} onChange={undefined} disableRedirect={undefined} searchWidth={"650px"} />
           </div>
         </div>
       </main>
-      <div className="font-Quicksand p-10 m-20 text-[##333333]">
-        Lorem ipsum dolor sit amet . The graphic and typographic operators know this well, in reality all the professions dealing with the universe of communication have a stable relationship with these words, but what is it? Lorem ipsum is a dummy text without any sense.
-        It is a sequence of Latin words that, as they are positioned, do not form sentences with a complete sense, but give life to a test text useful to fill spaces that will subsequently be occupied from ad hoc texts composed by communication professionals.
-        It is certainly the most famous placeholder text even if there are different versions distinguishable from the order in which the Latin words are repeated.
+      <div className="font-Quicksand p-10 m-20 text-[##333333] text-center">
+        <h2 className="text-3xl font-bold">About Us</h2>
+        <hr className="w-48 border-t-4 border-[#FF5C00] my-4 mx-auto" />
+        Welcome to Hommyfind – your go-to platform for finding the perfect PG or rental room in Chandigarh, Mohali, and Panchkula. Whether you’re a student or a working professional, we’re here to simplify your search for a comfortable and affordable living space.
+        Founded by locals, Hommyfind is dedicated to connecting you with verified listings tailored to your needs. Let us help you find your home away from home in the Tricity area!
+
       </div>
       <div className="font-Quicksand p-10 m-20 text-[#333333] text-center">
         <h2 className="text-3xl font-bold">Why Choose Us</h2>
         <hr className="w-48 border-t-4 border-[#FF5C00] my-4 mx-auto" />
 
-        <p className="text-gray-700">
-          Our property listing platform offers a seamless and intuitive experience, designed with cutting-edge Next.js technology for blazing-fast performance. Whether you're browsing through listings or searching for your dream home, our site ensures a smooth and responsive user experience every step of the way.
-        </p>
-
-        <p className="text-gray-700 mt-4">
-          Built with Tailwind CSS, our website is not only aesthetically pleasing but also highly customizable, ensuring that your journey in finding the perfect property is as enjoyable as it is efficient. Trust us to provide the best platform for all your property needs.
-        </p>
+        <div className="mt-8 space-y-6">
+          <p className="text-gray-700">
+            <strong>Local Expertise:</strong> Founded by Tricity locals, we understand the area and its unique housing market, ensuring you find the best options tailored to your needs.
+          </p>
+          <p className="text-gray-700">
+            <strong>Verified Listings:</strong> All our PGs and rooms are thoroughly vetted, so you can trust that what you see is what you get – no surprises.
+          </p>
+          <p className="text-gray-700">
+            <strong>User-Friendly Platform:</strong> Our easy-to-use interface makes searching for your ideal living space quick and hassle-free, saving you time and effort.
+          </p>
+          <p className="text-gray-700">
+            <strong>Tailored for You:</strong> Whether you’re a student or a working professional, we offer listings that fit your budget, lifestyle, and preferences.
+          </p>
+          <p className="text-gray-700">
+            <strong>Dedicated Support:</strong> Our team is here to assist you every step of the way, ensuring a smooth and stress-free experience from search to move-in.
+          </p>
+        </div>
       </div>
+
       <div className="font-Quicksand p-10 m-20 text-[#333333] text-center">
         <h2 className="text-3xl font-bold">VIEW OUR COMMUNITIES</h2>
         <hr className="w-48 border-t-4 border-[#FF5C00] my-4 mx-auto" />
@@ -106,9 +120,9 @@ export default function Home() {
           <GetInTouch />
         </div>
       </div>
-        <div>
-          <Footer/>
-        </div>
+      <div>
+        <Footer />
+      </div>
     </HouseProvider>
   );
 }
